@@ -1,0 +1,18 @@
+<div class="row search">
+  <div class="col-md-6">
+    <input type="text" placeholder="find a joke" class="form-control" [(ngModel)]="search">
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary" (click)="findJokes()">Submit</button>
+  </div>
+</div>
+<div class="row jokes-list">
+  <h2>Chuck Norris found:</h2>
+    <div class="card border-primary mb-3" style="max-width: 18rem;" *ngFor="let joke of jokes; let index = index" style="width: 500px">
+        <div class="card-header"><img src="{{joke.icon_url}}"></div>
+        <div class="card-body text-primary">
+          <h5 class="card-title">Joke #{{index + 1}}</h5>
+          <p class="card-text">{{joke.value}}</p>
+        </div>
+      </div>
+</div>
